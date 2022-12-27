@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "live-server client --host=localhost --port=5500 --no-browser"
+    "start": "live-server client --host=localhost --port=5500 --no-browser",
+    "dev" : "node server/index.js"
   },
   "devDependencies": {
     "eslint": "^8.30.0",
