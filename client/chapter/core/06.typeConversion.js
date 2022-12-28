@@ -20,14 +20,14 @@ console.log(String(null));
 
 // boolean -> 'true'or'false'
 let kind = true;
-console.log(String(kind));
-console.log(kind + "");
-
+//console.log(String(kind));
+console.log(Number(kind + ""));
+console.log(Number("")+Number(kind));
 /* 데이터 → 숫자 ----------------------------------------------------------- */
 
 // undeinfed
-
 console.log(Number(undefined));
+
 // null
 console.log(Number(null));
 
