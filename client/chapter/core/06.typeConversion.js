@@ -22,7 +22,9 @@ console.log(String(null));
 let kind = true;
 //console.log(String(kind));
 console.log(Number(kind + ""));
+console.log(Number("true")); //이런 이유로 NaN이 나옴
 console.log(Number("")+Number(kind));
+
 /* 데이터 → 숫자 ----------------------------------------------------------- */
 
 // undeinfed
