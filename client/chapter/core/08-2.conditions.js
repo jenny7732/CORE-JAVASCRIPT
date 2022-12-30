@@ -38,7 +38,7 @@ let userName = prompt('이름 입력', '');
 let pw;
 
 //대소문자 구별없이 넣게는 어떻게??
-if(userName === 'Admin'){
+if(userName?.toUpperCase() === 'Admin'.toUpperCase()){ //? : 옵셔널 체인징 -> null을 위해서 넣어줌
   pw = prompt('비밀번호를 입력하시오','');
   if(pw ==='TheMaster'){
     console.log('환영합니다.');
@@ -47,7 +47,7 @@ if(userName === 'Admin'){
   }else{
     console.log('인증되지 않은 사용자 입니다.');
   }
-}else if(userName ==='' || userName === null) {
+}else if(userName.replace(/\s*/g,'') ==='' || userName === null) {
   console.log('취소했습니다.');
 }else{
   console.log('인증되지 않은 사용자 입니다.');
