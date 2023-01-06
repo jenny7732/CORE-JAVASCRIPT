@@ -34,6 +34,13 @@ console.log(Object.prototype.hasOwnProperty.call(javaScript,key));
 
 let a = {}
 
+//for (let key in~)까지 하면 조상에 있는거 까지 가져오니까 if 로 한번더 확인하는거
+
+/* for~in문에서 객체 안의 대상을 파악하면 조상까지 올라가서 문제 생겨서 해결법은?
+객체 자신의(own) 속성(property)인지 확인(has)하는 방법 : hasownproperty
+
+그런데 hasownproperty가 함수 자체를 보호해주지않아 오염될 변질이 생겨서 해결법은?
+Object.prototype.hasOwnProperty.call(javaScript,key) */
 
 for(let key in javaScript){
 
