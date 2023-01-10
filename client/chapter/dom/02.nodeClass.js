@@ -67,9 +67,9 @@ getNode("h1").hidden = true;
 
 
 //나왔다 사라졌다 반복
-let toggle = false;
+/* let toggle = false;
 
 setInterval(() => {
   getNode("h1").hidden = toggle ? false : true;
   toggle = !toggle;
-}, 100);
+}, 100); */
