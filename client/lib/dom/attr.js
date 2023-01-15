@@ -1,6 +1,3 @@
-
-import { getNode } from "./getNode.js";
-
 /* 
 
 // IIFE 패턴 
@@ -71,8 +68,6 @@ const attr = (function(){
 attr()
 
  */
-
-
 
 function getAttr(node, prop) {
   // node = '.first'

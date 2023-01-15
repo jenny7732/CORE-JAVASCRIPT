@@ -1,8 +1,4 @@
 
-import { getNode } from "./getNode.js";
-import { typeError, syntaxError } from "../error/index.js";
-
-
 export function addClass(node,className){
   
   if(typeof node === 'string') node = getNode(node);
@@ -40,6 +36,8 @@ export function toggleClass(node,className){
 
   node.classList.toggle(className)
 }
+
+
 
 
 
