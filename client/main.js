@@ -42,9 +42,8 @@ let total = 0;
 // mobx
 
 function renderRecordListItem(){
-  
+                        // dice.js 파일에 cube 설정해줌
   let diceValue = Number(attr(memo('cube'),'data-dice'));
-
   let template = /* html */ `
     <tr>
       <td>${++count}</td>
