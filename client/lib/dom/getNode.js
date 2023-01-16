@@ -13,7 +13,7 @@ export function getNode(node){
 
 
 export function getNodes(node){
-  if(isString){
+  if(!isString(node)){
     typeError('getNode 함수의 인자는 문자 타입 이여야 합니다.');
   }
   
