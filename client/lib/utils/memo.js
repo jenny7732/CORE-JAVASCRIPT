@@ -14,7 +14,7 @@ export const memo = (() => {
   
     cache[key] = callback();
   
-    console.log(cache);
+    //console.log(cache);
   }
 })()
 
