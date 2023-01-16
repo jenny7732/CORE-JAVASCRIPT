@@ -1,4 +1,4 @@
-
+/* global gsap */
 import {clearContents, getInputValue, getNode, getRandom, insertLast, isNumericString,addClass,removeClass,showAlert,copy} from './lib/index.js'
 
 import { jujeobData } from "./data/data.js";
