@@ -1,5 +1,5 @@
 
-import { diceAnimation , getNode, getNodes} from "./lib/index.js";
+import { diceAnimation , disableElement, enableElement, getNode, getNodes, visibleElement, invisibleElement} from "./lib/index.js";
 
 /* [주사위 굴리기]
 1. dice 애니메이션 불러오기
@@ -16,7 +16,7 @@ import { diceAnimation , getNode, getNodes} from "./lib/index.js";
 
 //유사 배열, 배열의 구조 분해 할당
 const [rollingDiceButton,recordButton,resetButton] = getNodes('.buttonGroup > button');
-
+const recordListWrapper = getNode('.recordListWrapper');
 /* const rollingDiceButton = getNode('.buttonGroup > button:nth-child(1)')
 const recordButton = getNode('.buttonGroup > button:nth-child(2)')
 const resetButton = getNode('.buttonGroup > button:nth-child(2)') */
@@ -24,20 +24,35 @@ const resetButton = getNode('.buttonGroup > button:nth-child(2)') */
 //IIFE
 //(함수)() or (함수()) -> 즉각실행함수
 
-const handlerRollingDice = (() => {
+const handleRollingDice = (() => {
   let stopAnimation;
   let isRolling = false;
   
   return () => {
     if(isRolling){
       stopAnimation = setInterval(diceAnimation, 100)
-      recordButton.disabled = true; //버튼 비활성화
+      
+      disableElement(recordButton) //버튼 비활성화
+      disableElement(resetButton)
+
     }else{
       clearInterval(stopAnimation);
-      recordButton.disabled = false; //버튼 활성화
+
+      enableElement(recordButton) //버튼 활성화
+      enableElement(resetButton)
     }
     isRolling = !isRolling;
   }
 })()
 
-rollingDiceButton.addEventListener('click', handlerRollingDice)
+const handleRecord = ()=>{
+  visibleElement(recordListWrapper) //보여주기
+}
+
+const handleReset = () => {
+  invisibleElement(recordListWrapper) //숨기기
+}
+
+rollingDiceButton.addEventListener('click', handleRollingDice)
+recordButton.addEventListener('click', handleRecord)
+resetButton.addEventListener('click', handleReset)

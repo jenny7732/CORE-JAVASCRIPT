@@ -1,12 +1,39 @@
-import { typeError } from "../error.js";
+import { typeError } from "../error/typeError.js";
+import { isElement } from "../utils/typeOf.js";
+
+
+
+/**
+ * @function isElement checkElement
+ * @param {HTMLElement} node 
+ * @return {disabled}
+ */
+
 
 export function disableElement(node){
-  if(node.nodeType !== document.ELEMENT_NODE){
+  if(!isElement(node)){
     typeError('disableElement 함수의 인자는 DOM  요소 노드 이어야 합니다.')
   }
   node.disabled = true;
 }
 
 export function enableElement(node){
+  if(!isElement(node)){
+    typeError('disableElement 함수의 인자는 DOM  요소 노드 이어야 합니다.')
+  }
   node.disabled = false;
+}
+
+export function visibleElement(node){
+  if(!isElement(node)){
+    typeError('disableElement 함수의 인자는 DOM  요소 노드 이어야 합니다.')
+  }
+  node.hidden = false; //보여주기
+}
+
+export function invisibleElement(node){
+  if(!isElement(node)){
+    typeError('disableElement 함수의 인자는 DOM  요소 노드 이어야 합니다.')
+  }
+  node.hidden = true; //숨기기
 }
