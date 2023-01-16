@@ -5,7 +5,7 @@ export const memo = (() => {
   const cache = {}
 
   return (key,callback) => {
-    if(!callback) return cache[key];
+    if(!callback) return cache[key]; //콜백함수가 없으면 cache[key] 리턴해준다.
 
     if(cache[key]){
       console.warn(`${key} 값은 이미 캐시된 값이 존재합니다.`);
@@ -14,7 +14,7 @@ export const memo = (() => {
   
     cache[key] = callback();
   
-    // console.log(cache);
+    console.log(cache);
   }
 })()
 
@@ -23,16 +23,16 @@ export const memo = (() => {
 // memo('name',()=>'tiger')
 // memo('name')
 
-// console.log(memo('name',()=>'tttt'));
+//console.log(memo('name',()=>'tttt'));
+//console.log(memo('name'));
 
 
 
-
-// memo()('cube',()=> document.querySelector('#cube'));
-
+//memo('cube',()=> document.querySelector('#cube'));
 
 
-// console.log( memo()('cube') );
+
+//console.log( memo('cube') );
 
 
 
