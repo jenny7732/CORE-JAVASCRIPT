@@ -15,7 +15,7 @@ export function showAlert(node,text = '에러입니다.',timeout = 1500){
   
 }
 
-showAlert('.alert','올바른 정보를 입력해주세요',3000)
+
 
 
 
