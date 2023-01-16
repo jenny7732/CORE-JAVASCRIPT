@@ -93,4 +93,3 @@ resultArea.addEventListener('click', clickCopyHandler);
 
 
 
-
