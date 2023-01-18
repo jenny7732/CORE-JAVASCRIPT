@@ -33,7 +33,7 @@ const defaultOptions = {
   errMessage : '알 수 없는 오류가 발생했습니다.'
 }
 
-//shoudlReject가 true면 오류, false면 성공
+
 export function delayP(options = {}){
 
   let config = {...defaultOptions}; //얕은 복사 (참조는 동일한 대상을 가르켜서!!)
