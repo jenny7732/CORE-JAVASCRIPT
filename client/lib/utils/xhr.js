@@ -24,15 +24,17 @@ export function xhrData({ //매개변수에 받자마자 구조분해할당 -> �
 }={}){ //매개변수 기본값을 {} 객체로 해놓기
   
   //const {method, url, body} = options;
+  //서버로부터 XML 데이터를 전송받아 처리하는 데 사용
   const xhr = new XMLHttpRequest();
 
+  //요청을 초기화한다. -> 원하는 초깃값으로 요청한다.
   xhr.open(method, url);
 
   /* Object.entries(headers).forEach(([key, value]) => { //Object.entries() 객체의 프로퍼티를 [키, 값] 으로 반환시킨다
     xhr.setRequestHeader(key, value);
   }); */
 
-
+  //이벤트를 통해 readyState 변경되면 실행하겠다.
   xhr.addEventListener('readystatechange', ()=>{
     const {status, readyState, response} = xhr; //객체 구조 분해 할당
 
