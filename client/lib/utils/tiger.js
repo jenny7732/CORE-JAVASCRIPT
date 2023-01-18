@@ -25,7 +25,7 @@ export const tiger = async (options = {})=>{
   //fetch()가 promise를 반환하니까 그 값을 뽑아내기 위해서 await을 사용!!
   //restOptions : url을 제외한 나머지 객체 프로퍼티들
   let response = await fetch(url, restOptions)
-
+  //통신이 성공했다면
   if(response.ok){
     //response 객체에 key값이 data 추가!!
     //response.json() : response에 있는 json을 가져오겠다. 
