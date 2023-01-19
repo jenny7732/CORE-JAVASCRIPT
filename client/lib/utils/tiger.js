@@ -22,9 +22,9 @@ export const tiger = async (options = {})=>{
    headers:{...defaultOptions.headers, ...options.headers} //깊은 복사를 위해 얕복 한번 더
   }
 
-  //fetch()가 promise를 반환하니까 그 값을 뽑아내기 위해서 await을 사용!!
+  //fetch()가 promise를 반환하니까 그 값을 뽑아내기 위해서 await을 사용!! -> responce 객체가 나옴
   //restOptions : url을 제외한 나머지 객체 프로퍼티들
-  let response = await fetch(url, restOptions)
+  let response = await fetch(url, restOptions)     // 질문(1)
   //통신이 성공했다면
   if(response.ok){
     //response 객체에 key값이 data 추가!!
@@ -32,7 +32,7 @@ export const tiger = async (options = {})=>{
     //근데 프라미스를 반환하니까 await 으로 값을 받기
     response.data = await response.json()
   }
-  return response;
+  return response; //객체를 반환하면 그 안의 여러 값을 가져올 수 있으니까
 }
 
 tiger.get = (url, options) => {
