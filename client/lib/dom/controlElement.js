@@ -3,37 +3,77 @@ import { isElement } from "../utils/typeOf.js";
 
 
 
+
 /**
  * @function isElement checkElement
- * @param {HTMLElement} node 
- * @return {disabled}
+ * @param {HTMLElement} node
+ * @returns set disabled 
  */
 
-
 export function disableElement(node){
+
   if(!isElement(node)){
-    typeError('disableElement 함수의 인자는 DOM  요소 노드 이어야 합니다.')
+    typeError('disableElement 함수의 인자는 DOM 요소 노드 이어야 합니다.')
   }
   node.disabled = true;
 }
 
+
+
 export function enableElement(node){
   if(!isElement(node)){
-    typeError('disableElement 함수의 인자는 DOM  요소 노드 이어야 합니다.')
+    typeError('enableElement 함수의 인자는 DOM 요소 노드 이어야 합니다.')
   }
+  
   node.disabled = false;
 }
 
-export function visibleElement(node){
+
+export function visibleElement(node){ // 보여야함
   if(!isElement(node)){
-    typeError('disableElement 함수의 인자는 DOM  요소 노드 이어야 합니다.')
+    typeError('visibleElement 함수의 인자는 DOM 요소 노드 이어야 합니다.')
   }
-  node.hidden = false; //보여주기
+  node.hidden = false;
 }
 
-export function invisibleElement(node){
+
+export function invisibleElement(node){ // 안보여야함 
   if(!isElement(node)){
-    typeError('disableElement 함수의 인자는 DOM  요소 노드 이어야 합니다.')
+    typeError('invisibleElement 함수의 인자는 DOM 요소 노드 이어야 합니다.')
   }
-  node.hidden = true; //숨기기
+  node.hidden = true;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

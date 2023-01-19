@@ -5,9 +5,16 @@ export function isNumericString(data){
 }
 
 
+
+
+
+
 function typeOf(data){
   return Object.prototype.toString.call(data).slice(8,-1).toLowerCase();
 }
+
+
+
 
 export const isObject = data => typeOf(data) === 'object'
 export const isString = data => typeOf(data) === 'string'
@@ -20,6 +27,30 @@ export const isUndefined = data => typeOf(data) === 'undefined';
 export const isNull = data => typeOf(data) === 'null';
 export const isSymbol = data => typeOf(data) === 'symbol';
 export const isElement = node => node.nodeType === document.ELEMENT_NODE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

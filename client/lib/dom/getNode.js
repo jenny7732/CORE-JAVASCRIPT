@@ -1,5 +1,6 @@
-import { typeError } from "../error/typeError.js";
-import { isString } from "../utils/typeOf.js";
+
+import { isString } from '../utils/typeOf.js'
+import { typeError } from '../error/typeError.js'
 
 export function getNode(node){
   if(!isString(node)){
@@ -19,6 +20,7 @@ export function getNodes(node){
   
   return document.querySelectorAll(node)
 }
+
 
 
 
